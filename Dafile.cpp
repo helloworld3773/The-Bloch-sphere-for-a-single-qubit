@@ -6,14 +6,19 @@ int main () {
 char x;
 cin >> x;
   cout << "welcome to this project" << "\n";
-cout << "to quit the execution of code type q and send to the console" << "\n";
+  cout << "to quit the execution of code type q and send to the console" << "\n";
   cout << "to see the other commands type l and send to the console" << "\n";
   cout << "remember that capitalisation matters" << "\n";
-    cout << "-----------------------" << "\n";
+  cout << "-----------------------" << "\n";
       if (x == q) {
       return 0;
     }
   else if (x == l) {
     cout << "X for the x gate" << "\n";
+    cout << "Z for the z gate" << "\n";
+    cout << "Y for the y gate" << "\n";
+  }
+  else if (x == X) {
+    
   }
 }
