@@ -3,37 +3,80 @@
 #include <string>
 using namespace std;
 
-int main () {
-  int r = 10
-  cout << "welcome to this project" << "\n";
-  cout << "to quit the execution of code type q and send to the console" << "\n";
-  cout << "to see the other commands type l and send to the console" << "\n";
-  cout << "remember that capitalisation matters" << "\n";
-  cout << "-----------------------" << "\n";
-  for (int z = -r; z <= r; z++) {
-    for (int a = -r; a <= r; a++) {
-      if (abs(x * x + y * y - r * r) < r) {
-        cout << "*";
-      }
-        else {
-          cout << " ";
-        }
-      cout << "\n";
-    }
-  }
-  string y = |0>
-  char x;
-cin >> x;
-      if (x == q) {
-      return 0;
-    }
-  else if (x == l) {
-    cout << "X for the x gate" << "\n";
-    cout << "Z for the z gate" << "\n";
-    cout << "Y for the y gate" << "\n";
-  }
-  else if (x == X) {
-    if (y == |0>) {
-    }
-  }
+void BS(int a);
+int main() {
+cout << "welcome to the bloch sphere simulation" << "\n" << "to quit the program, type \"Quit\"" << "\n" << "to change the state of the qubit, type \"X Gate\"" << "\n" << "note that this project is a work in progress and is not complete" << "\n";
+int a = 1;
+string u;
+getline(cin,u);
+if (u == "Quit") {
+return 0;
+}
+else if (u == "X Gate") {
+if (a == 1) {
+a = 2;
+BS(a);
+}
+else if (a == 2) {
+a = 1;
+BS(a);
+}
+}
+}
+
+void BS(int a) {
+int r = 6;
+double ar = 2.0; 
+for (int y = -r; y <= r; ++y) {
+for (int x = static_cast<int>(-r * ar); x <= static_cast<int>(r * ar); ++x) {
+double nx = x / ar;
+double d = sqrt(pow(nx,2)+ pow(y,2));
+if (((y == 0) && ((x == static_cast<int>(-r * ar)) || (x == static_cast<int>(r * ar) - 2))) || (((y == -r) || (y == r)) && (x == -1)) || ((y == -4) && (x == static_cast<int>(ar * 4) - 2)) || ((y == 4) && (-x == static_cast<int>(ar * 4) + 1))) {
+cout << "|";
+}
+else if (((y == 0) && (x == static_cast<int>(-r * ar) + 1)) || ((y == -4) && (x == static_cast<int>(ar * 4) - 1))) {
+cout << "-";
+}
+else if (y == 0 && x == static_cast<int>(r * ar) - 1) {
+cout << "+";
+}
+else if ((y == -4 && x == static_cast<int>(ar * 4)) || (y == 4 && -x == static_cast<int>(ar * 4))) {
+cout << "i";
+}
+else if (y == -r && x == 0) {
+cout << "0";
+}
+else if (y == r && x == 0) {
+cout << "1";
+}
+else if (((y == 0) && ((x == static_cast<int>(-r * ar) + 2) || (x == static_cast<int>(r * ar)))) || ((x == 1) && ((y == -r) || (y == r))) || ((y == -4) && (x == static_cast<int>(ar * 4) + 1)) || ((y == 4) && (-x == static_cast<int>(ar * 4) - 1)) || ((y == 0) && (a == 3) && (x == r + 2))) {
+cout << ">";
+}
+else if (a == 1 && (y == -r + 1 && x == 0)) {
+cout << "^";
+}
+else if (((a == 1) && ((y < 0) && (x == 0) && (y > -r + 1))) || ((a == 2) && ((y > 0) && (x == 0) && (y > -r + 1)))) {
+cout << "|";
+}
+else if (((a == 2) && ((y == r - 1) && (x == 1))) || ((a == 5) && ((0 >= y) && (y >= -3)) && ((y * static_cast<int>(ar * 4)) == (-4 * x))) || ((a == 6) && ((3 >= y) && (y >= 0)) && ((y * static_cast<int>(ar * 4)) == (-4 * x)))) {
+cout << "/";
+}
+else if (a == 2 && (y == r - 1 && x == -1)) {
+std::cout << "\\";
+}
+else if (((a == 3) && ((y == 0) && (x > 0) && (x < r + 2))) || ((a == 4) && (y == 0) && (x < 0) && (x > -r - 2))) {
+cout << "-";
+}
+else if (a == 4 && y == 0 && x == -r - 2) {
+cout << "<";
+}
+else if (d > r - 0.5 && d < r + 0.5) {
+cout << "*";
+} 
+else {
+cout << " ";
+}
+}
+cout << "\n";
+}
 }
