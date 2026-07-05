@@ -7,6 +7,8 @@ void BS(int a);
 int main() {
 cout << "welcome to the bloch sphere simulation" << "\n" << "to quit the program, type \"Quit\"" << "\n" << "to change the state of the qubit, type \"X Gate\"" << "\n" << "note that this project is a work in progress and is not complete" << "\n";
 int a = 1;
+BS(a);
+while (true) {
 string u;
 getline(cin,u);
 if (u == "Quit") {
@@ -21,9 +23,20 @@ else if (a == 2) {
 a = 1;
 BS(a);
 }
+else if ((a == 3) || (a == 4)) {
+BS(a);
+}
+else if (a == 5) {
+a = 6;
+BS(a);
+}
+else {
+a = 5;
+BS(a);
 }
 }
-
+}
+}
 void BS(int a) {
 int r = 6;
 double ar = 2.0; 
