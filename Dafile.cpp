@@ -5,7 +5,7 @@ using namespace std;
 
 void BS(int a);
 int main() {
-cout << "welcome to the bloch sphere simulation" << "\n" << "to quit the program, type \"Quit\"" << "\n" << "to change the state of the qubit, type \"X Gate\"" << "\n" << "note that this project is a work in progress and is not complete" << "\n";
+cout << "welcome to the bloch sphere simulation" << "\n" << "to quit the program, type \"Quit\"" << "\n" << "to perform the X gate to the qubit, type \"X Gate\"" << "\n" << "and to perfotm the Z gate to the qubit, type \"Z Gate\"" << "\n" << "note that this project is a work in progress and is not complete" << "\n";
 int a = 1;
 BS(a);
 while (true) {
@@ -24,6 +24,27 @@ a = 1;
 BS(a);
 }
 else if ((a == 3) || (a == 4)) {
+BS(a);
+}
+else if (a == 5) {
+a = 6;
+BS(a);
+}
+else {
+a = 5;
+BS(a);
+}
+}
+else if (u == "Z Gate") {
+if ((a == 1) || (a == 2)) {
+BS(a);
+}
+else if (a == 3) {
+a = 4;
+BS(a);
+}
+else if (a == 4) {
+a = 3;
 BS(a);
 }
 else if (a == 5) {
