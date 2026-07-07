@@ -5,7 +5,7 @@ using namespace std;
 
 void BS(int a);
 int main() {
-cout << "welcome to the bloch sphere simulation" << "\n" << "to quit the program, type \"Quit\"" << "\n" << "to see the list of commands again, type \"Commands\"" << "\n" << "to perform the X gate to the qubit, type \"X Gate\"" << "\n" << "and to perfotm the Z gate to the qubit, type \"Z Gate\"" << "\n" << "note that this project is a work in progress and is not complete" << "\n";
+cout << "welcome to the bloch sphere simulation" << "\n" << "to quit the program, type \"Quit\"" << "\n" << "to see the list of commands again, type \"Commands\"" << "\n" << "to perform the X gate to the qubit, type \"X Gate\"" << "\n" << "to perform the Y gate to the qubit, type \"Y Gate\"" << "\n" << "and to perform the Z gate to the qubit, type \"Z Gate\"" << "\n" << "note that this project is a work in progress and is not complete" << "\n";
 int a = 1;
 BS(a);
 while (true) {
@@ -15,7 +15,7 @@ if (u == "Quit") {
 return 0;
 }
 else if (u == "Commands") {
-cout << "Commands List:" << "\n" << "to quit the program, type \"Quit\"" << "\n" << "to see the list of commands again, type \"Commands\"" << "\n" << "to perform the X gate to the qubit, type \"X Gate\"" << "\n" << "and to perfotm the Z gate to the qubit, type \"Z Gate\"" << "\n" << "note that this project is a work in progress and is not complete" << "\n";
+cout << "Commands List:" << "\n" << "to quit the program, type \"Quit\"" << "\n" << "to see the list of commands again, type \"Commands\"" << "\n" << "to perform the X gate to the qubit, type \"X Gate\"" << "\n" << "to perform the Y gate to the qubit, type \"Y Gate\"" << "\n" << "and to perform the Z gate to the qubit, type \"Z Gate\"" << "\n" << "note that this project is a work in progress and is not complete" << "\n";
 }
 else if (u == "X Gate") {
 if (a == 1) {
@@ -56,6 +56,27 @@ BS(a);
 }
 else {
 a = 5;
+BS(a);
+}
+}
+else if (u == "Y Gate") {
+if (a == 1) {
+a = 2;
+BS(a);
+}
+else if (a == 2) {
+a = 1;
+BS(a);
+}
+else if (a == 3) {
+a = 4;
+BS(a);
+}
+else if (a == 4) {
+a = 3;
+BS(a);
+}
+else {
 BS(a);
 }
 }
